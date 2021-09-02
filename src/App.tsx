@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Alert from "react-popup-alert";
-import { createBoard, createBoard2, createBoard3 } from "./setup";
+import { createBoard, createBoard2 } from "./setup";
 import { shuffleArray } from "./utils";
 import { CardType } from "./setup";
 import Card from "./components/Card/Card";
@@ -108,14 +108,6 @@ const App = () => {
     setActiveBoard(2);
   };
 
-  const board3 = () => {
-    setCards(shuffleArray(createBoard3()));
-    setGameWon(false);
-    setMatchedPairs(0);
-    setTurns(0);
-    setActiveBoard(3);
-  };
-
   // reset game
   // const resetGame = () => {
   //   setCards(shuffleArray(createBoard()));
@@ -172,12 +164,6 @@ const App = () => {
           onClick={board2}
         >
           {gameWon && activeBoard === 2 ? "Neues Spiel" : "Florida"}
-        </button>
-        <button
-          className={activeBoard === 3 ? "activeBoard" : ""}
-          onClick={board3}
-        >
-          {gameWon && activeBoard === 3 ? "Neues Spiel" : "Oma"}
         </button>
       </div>
     </div>
